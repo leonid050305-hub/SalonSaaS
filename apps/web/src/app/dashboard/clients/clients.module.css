@@ -1,0 +1,46 @@
+.header { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:24px; }
+.title  { font-family:var(--serif); font-size:28px; font-weight:400; margin-bottom:4px; }
+.sub    { color:var(--text3); font-size:14px; }
+.newBtn { background:var(--accent); color:#1a1200; border-radius:var(--radius); padding:10px 18px; font-size:14px; font-weight:600; transition:all .2s; }
+.newBtn:hover { background:var(--accent2); }
+
+.toolbar { margin-bottom:20px; }
+.searchWrap { position:relative; max-width:360px; }
+.searchIcon { position:absolute; left:12px; top:50%; transform:translateY(-50%); color:var(--text3); font-size:15px; pointer-events:none; }
+.search { width:100%; background:var(--bg2); border:1px solid var(--border); border-radius:var(--radius); padding:10px 14px 10px 36px; color:var(--text); font-size:14px; outline:none; transition:border-color .2s; }
+.search:focus { border-color:var(--accent); }
+.search::placeholder { color:var(--text3); }
+
+.tableHead {
+  display:grid; grid-template-columns:2fr 1.5fr 80px 140px 120px 100px 40px;
+  padding:8px 16px; font-size:12px; color:var(--text3); font-weight:500;
+  text-transform:uppercase; letter-spacing:0.04em; border-bottom:1px solid var(--border);
+  margin-bottom:4px;
+}
+
+.row {
+  display:grid; grid-template-columns:2fr 1.5fr 80px 140px 120px 100px 40px;
+  align-items:center; padding:12px 16px;
+  background:var(--bg2); border:1px solid var(--border); border-radius:var(--radius);
+  margin-bottom:4px; transition:all .15s;
+}
+.row:hover { border-color:var(--border2); background:var(--bg3); }
+
+.clientName { display:flex; align-items:center; gap:10px; font-size:14px; font-weight:500; }
+.avatar { width:32px; height:32px; border-radius:50%; background:var(--accent-bg); border:1px solid var(--accent-bg2); color:var(--accent); font-size:13px; font-weight:600; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+
+.phone    { font-size:13px; color:var(--text2); }
+.visits   { font-size:14px; font-weight:500; }
+.lastVisit{ font-size:13px; color:var(--text3); }
+.total    { font-size:14px; font-weight:500; font-variant-numeric:tabular-nums; }
+
+.loyalty { }
+.loyaltyBadge { font-size:12px; padding:3px 8px; border-radius:20px; background:var(--accent-bg); color:var(--accent); font-weight:500; }
+
+.rowMenu { color:var(--text3); font-size:18px; padding:4px; border-radius:6px; transition:all .15s; }
+.rowMenu:hover { color:var(--text); background:var(--bg4); }
+
+@media (max-width:1100px) {
+  .tableHead, .row { grid-template-columns:2fr 1.5fr 80px 120px 40px; }
+  .visits, .loyalty { display:none; }
+}

@@ -1,0 +1,116 @@
+.root { display: grid; grid-template-columns: 360px 1fr; gap: 24px; min-height: calc(100vh - 64px); }
+
+/* Left */
+.left { display: flex; flex-direction: column; gap: 16px; }
+.header { display: flex; justify-content: space-between; align-items: flex-start; }
+.title  { font-family: var(--serif); font-size: 28px; font-weight: 400; margin-bottom: 4px; }
+.sub    { font-size: 14px; color: var(--text3); }
+.newBtn { background: var(--accent); color: #1a1200; border-radius: var(--radius); padding: 9px 16px; font-size: 14px; font-weight: 600; transition: all .2s; }
+.newBtn:hover { background: var(--accent2); }
+
+.filters { display: flex; gap: 4px; background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 3px; }
+.filter, .filterActive { flex: 1; padding: 6px; border-radius: 7px; font-size: 13px; font-weight: 500; transition: all .15s; }
+.filter { color: var(--text3); }
+.filter:hover { color: var(--text2); }
+.filterActive { background: var(--bg3); color: var(--text); border: 1px solid var(--border); }
+
+.list { display: flex; flex-direction: column; gap: 6px; overflow-y: auto; }
+
+.card {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 16px;
+  background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius);
+  cursor: pointer; transition: all .15s;
+}
+.card:hover { border-color: var(--border2); background: var(--bg3); }
+.cardActive { border-color: var(--accent) !important; background: var(--accent-bg) !important; }
+.cardAvatar {
+  width: 40px; height: 40px; border-radius: 50%;
+  font-size: 14px; font-weight: 600; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.cardInfo { flex: 1; min-width: 0; }
+.cardName    { font-size: 14px; font-weight: 500; color: var(--text); }
+.cardRole    { font-size: 12px; color: var(--text3); margin-top: 2px; }
+.cardServices { font-size: 11px; color: var(--text3); margin-top: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cardRight { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; flex-shrink: 0; }
+.statusDot { width: 7px; height: 7px; border-radius: 50%; }
+.active   { background: var(--green); }
+.inactive { background: var(--border2); }
+.cardDays { display: flex; gap: 3px; }
+.dayDot { width: 6px; height: 6px; border-radius: 50%; background: var(--border2); transition: background .15s; }
+.dayOn  { background: var(--accent); }
+
+/* Right panel */
+.right { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; display: flex; flex-direction: column; }
+.rightVisible { }
+
+.detail { display: flex; flex-direction: column; gap: 20px; }
+.detailHead { display: flex; align-items: center; gap: 14px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+.detailAvatar { width: 52px; height: 52px; border-radius: 50%; font-size: 18px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.detailName { font-size: 18px; font-weight: 500; color: var(--text); margin-bottom: 3px; }
+.detailRole { font-size: 13px; color: var(--text3); }
+
+.detailSection { }
+.detailLabel { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--text3); margin-bottom: 8px; }
+.detailValue { font-size: 14px; color: var(--text); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font-size: 12px; padding: 4px 10px; border-radius: 20px; background: var(--bg3); border: 1px solid var(--border); color: var(--text2); }
+
+.scheduleGrid { display: flex; flex-direction: column; gap: 4px; }
+.scheduleRow { display: flex; justify-content: space-between; padding: 7px 10px; border-radius: 7px; background: var(--bg3); }
+.scheduleOff { opacity: .4; }
+.scheduleDay  { font-size: 13px; color: var(--text3); width: 28px; }
+.scheduleTime { font-size: 13px; color: var(--text); font-variant-numeric: tabular-nums; }
+
+.detailActions { display: flex; gap: 8px; margin-top: 4px; }
+.editBtn { flex: 1; background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius); padding: 9px; font-size: 13px; font-weight: 500; color: var(--text2); transition: all .15s; }
+.editBtn:hover { border-color: var(--border2); color: var(--text); }
+.deactivateBtn { flex: 1; background: var(--red-bg); border: 1px solid rgba(224,112,112,.2); border-radius: var(--radius); padding: 9px; font-size: 13px; font-weight: 500; color: var(--red); transition: all .15s; }
+.deactivateBtn:hover { background: rgba(224,112,112,.15); }
+.activateBtn { flex: 1; background: var(--green-bg); border: 1px solid rgba(107,191,142,.2); border-radius: var(--radius); padding: 9px; font-size: 13px; font-weight: 500; color: var(--green); transition: all .15s; }
+
+/* Form */
+.form { display: flex; flex-direction: column; height: 100%; }
+.formHead { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+.formTitle { font-size: 16px; font-weight: 600; color: var(--text); }
+.formClose { color: var(--text3); font-size: 16px; padding: 4px 8px; border-radius: 6px; transition: all .15s; }
+.formClose:hover { background: var(--bg4); color: var(--text); }
+
+.formFields { display: flex; flex-direction: column; gap: 16px; flex: 1; overflow-y: auto; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field label { font-size: 12px; font-weight: 500; color: var(--text3); text-transform: uppercase; letter-spacing: .04em; }
+.field input {
+  background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 10px 12px; color: var(--text); font-size: 14px; outline: none; transition: border-color .2s; font-family: inherit;
+}
+.field input:focus { border-color: var(--accent); }
+.field input::placeholder { color: var(--text3); }
+
+.daysToggle { display: flex; gap: 6px; }
+.dayToggle { flex: 1; padding: 8px 4px; border-radius: 7px; border: 1px solid var(--border); font-size: 13px; font-weight: 500; color: var(--text3); background: var(--bg3); transition: all .15s; }
+.dayToggle:hover { border-color: var(--border2); color: var(--text2); }
+.dayToggleOn { background: var(--accent-bg); border-color: rgba(212,169,106,.4) !important; color: var(--accent) !important; }
+
+.hoursGrid { display: flex; flex-direction: column; gap: 6px; }
+.hoursRow { display: flex; align-items: center; gap: 8px; }
+.hoursDay { font-size: 13px; color: var(--text3); width: 28px; }
+.hoursSep { font-size: 13px; color: var(--text3); }
+.timeInput { background: var(--bg3); border: 1px solid var(--border); border-radius: 7px; padding: 7px 10px; color: var(--text); font-size: 13px; outline: none; font-family: inherit; flex: 1; transition: border-color .2s; }
+.timeInput:focus { border-color: var(--accent); }
+
+.formFoot { display: flex; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); margin-top: 16px; }
+.cancelBtn { flex: 1; background: none; border: 1px solid var(--border); border-radius: var(--radius); padding: 10px; font-size: 14px; font-weight: 500; color: var(--text3); transition: all .15s; }
+.cancelBtn:hover { border-color: var(--border2); color: var(--text2); }
+.saveBtn { flex: 2; background: var(--accent); border: none; border-radius: var(--radius); padding: 10px; font-size: 14px; font-weight: 600; color: #1a1200; transition: all .2s; }
+.saveBtn:hover:not(:disabled) { background: var(--accent2); }
+.saveBtn:disabled { opacity: .4; cursor: not-allowed; }
+
+.empty { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; color: var(--text3); text-align: center; }
+.emptyIcon { font-size: 32px; opacity: .3; }
+.empty p { font-size: 14px; line-height: 1.6; }
+
+@media (max-width: 900px) {
+  .root { grid-template-columns: 1fr; }
+  .right { display: none; }
+}

@@ -1,0 +1,75 @@
+.header { display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px }
+.title  { font-family:var(--serif);font-size:28px;font-weight:400;margin-bottom:4px }
+.sub    { font-size:14px;color:var(--text3) }
+.newBtn { background:var(--accent);color:#1a1200;border-radius:var(--radius);padding:9px 16px;font-size:14px;font-weight:600;transition:all .2s }
+.newBtn:hover { background:var(--accent2) }
+
+.stats { display:flex;gap:10px;margin-bottom:24px;flex-wrap:wrap }
+.statCard {
+  display:flex;align-items:center;gap:9px;
+  padding:10px 14px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);
+  cursor:pointer;transition:all .15s;
+}
+.statCard:hover { border-color:var(--border2) }
+.statActive { }
+.statDot  { width:8px;height:8px;border-radius:50%;flex-shrink:0 }
+.statName { font-size:13px;font-weight:500;color:var(--text) }
+.statCount{ font-size:12px;color:var(--text3);margin-left:2px }
+
+.tableHead {
+  display:grid;grid-template-columns:2fr 110px 110px 100px 90px 72px;
+  padding:8px 16px;font-size:12px;color:var(--text3);font-weight:500;
+  text-transform:uppercase;letter-spacing:.04em;
+  border-bottom:1px solid var(--border);margin-bottom:4px;
+}
+
+.row {
+  display:grid;grid-template-columns:2fr 110px 110px 100px 90px 72px;
+  align-items:center;padding:12px 16px;
+  background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);
+  margin-bottom:4px;transition:all .15s;
+}
+.row:hover { border-color:var(--border2);background:var(--bg3) }
+
+.svcName  { display:flex;align-items:center;gap:10px;font-size:14px;font-weight:500;color:var(--text) }
+.svcDot   { width:7px;height:7px;border-radius:50%;flex-shrink:0 }
+.catBadge { font-size:12px;padding:3px 9px;border-radius:20px;font-weight:500;display:inline-block }
+.duration { font-size:13px;color:var(--text2) }
+.price    { font-size:14px;font-weight:500;font-variant-numeric:tabular-nums }
+.status   { font-size:12px;font-weight:500;padding:3px 9px;border-radius:20px;display:inline-block }
+.statusOn  { background:var(--green-bg);color:var(--green) }
+.statusOff { background:var(--bg3);color:var(--text3);border:1px solid var(--border) }
+
+.actions  { display:flex;gap:4px;justify-content:flex-end }
+.actionBtn { font-size:15px;color:var(--text3);padding:5px 7px;border-radius:6px;transition:all .15s }
+.actionBtn:hover { color:var(--text);background:var(--bg4) }
+
+/* Modal */
+.overlay { position:fixed;inset:0;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;z-index:100;padding:20px }
+.modal { background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);width:100%;max-width:460px;overflow:hidden }
+.modalHead { display:flex;justify-content:space-between;align-items:center;padding:20px 24px 0 }
+.modalTitle { font-size:16px;font-weight:600;color:var(--text) }
+.modalClose { color:var(--text3);font-size:16px;padding:4px 8px;border-radius:6px;transition:all .15s }
+.modalClose:hover { background:var(--bg4);color:var(--text) }
+.modalFields { padding:20px 24px;display:flex;flex-direction:column;gap:14px }
+.field { display:flex;flex-direction:column;gap:6px }
+.field label { font-size:12px;font-weight:500;color:var(--text3);text-transform:uppercase;letter-spacing:.04em }
+.field input,.field select {
+  background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);
+  padding:10px 12px;color:var(--text);font-size:14px;outline:none;font-family:inherit;transition:border-color .2s;
+}
+.field input:focus,.field select:focus { border-color:var(--accent) }
+.field input::placeholder { color:var(--text3) }
+.field select { cursor:pointer }
+.row2 { display:grid;grid-template-columns:1fr 1fr;gap:12px }
+.modalFoot { display:flex;gap:8px;padding:16px 24px;border-top:1px solid var(--border) }
+.cancelBtn { flex:1;background:none;border:1px solid var(--border);border-radius:var(--radius);padding:10px;font-size:14px;font-weight:500;color:var(--text3);transition:all .15s }
+.cancelBtn:hover { border-color:var(--border2);color:var(--text2) }
+.saveBtn { flex:2;background:var(--accent);border:none;border-radius:var(--radius);padding:10px;font-size:14px;font-weight:600;color:#1a1200;transition:all .2s }
+.saveBtn:hover:not(:disabled) { background:var(--accent2) }
+.saveBtn:disabled { opacity:.4;cursor:not-allowed }
+
+@media (max-width:900px) {
+  .tableHead,.row { grid-template-columns:2fr 100px 90px 72px }
+  .catBadge,.duration { display:none }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "salon-app",
+  "private": true,
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "db:push": "cd packages/db && npx prisma db push",
+    "db:studio": "cd packages/db && npx prisma studio",
+    "db:migrate": "cd packages/db && npx prisma migrate dev"
+  }
+}

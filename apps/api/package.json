@@ -1,0 +1,25 @@
+{
+  "name": "@salon/api",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev":   "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "migrate": "cd ../../packages/db && npx prisma migrate deploy"
+  },
+  "dependencies": {
+    "fastify": "^4.26.0",
+    "@fastify/jwt": "^8.0.0",
+    "@fastify/cors": "^9.0.0",
+    "@fastify/cookie": "^9.3.1",
+    "bcryptjs": "^2.4.3",
+    "@salon/db": "*"
+  },
+  "devDependencies": {
+    "tsx": "^4.7.0",
+    "typescript": "^5.4.0",
+    "@types/node": "^20.0.0",
+    "@types/bcryptjs": "^2.4.6"
+  }
+}
