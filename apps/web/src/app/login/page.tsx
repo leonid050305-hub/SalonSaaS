@@ -52,8 +52,8 @@ export default function LoginPage() {
       <div className={styles.right}>
         <div className={styles.card}>
           <div className={styles.tabs}>
-            <button className={mode === 'login' ? styles.activeTab : styles.tab} onClick={() => setMode('login')}>Войти</button>
-            <button className={mode === 'register' ? styles.activeTab : styles.tab} onClick={() => setMode('register')}>Регистрация</button>
+            <button type="button" className={mode === 'login' ? styles.activeTab : styles.tab} onClick={() => setMode('login')}>Войти</button>
+            <button type="button" className={mode === 'register' ? styles.activeTab : styles.tab} onClick={() => setMode('register')}>Регистрация</button>
           </div>
 
           <form onSubmit={submit} className={styles.form}>
