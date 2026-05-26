@@ -1,6 +1,9 @@
 'use client'
 import { createContext, useContext, useEffect, useState, ReactNode } from 'react'
-import { useRouter } from 'next/navigation'
+import { useRouter, usePathname } from 'next/navigation'
+
+const API = process.env.NEXT_PUBLIC_API_URL ?? ''
+const PUBLIC_PATHS = ['/login', '/register', '/book']
 
 interface User {
   id: string
@@ -30,17 +33,17 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [salon, setSalon] = useState<Salon | null>(null)
   const [loading, setLoading] = useState(true)
   const router = useRouter()
+  const pathname = usePathname()
 
   useEffect(() => {
     const init = async () => {
       try {
-        const res = await fetch('/api/auth/me', { credentials: 'include' })
+        const res = await fetch(`${API}/api/auth/me`, { credentials: 'include' })
         if (!res.ok) { setLoading(false); return }
         const u = await res.json()
         setUser(u)
 
-        // Загружаем первый салон тенанта
-        const sRes = await fetch('/api/salons', { credentials: 'include' })
+        const sRes = await fetch(`${API}/api/salons`, { credentials: 'include' })
         if (sRes.ok) {
           const salons = await sRes.json()
           if (salons.length > 0) setSalon(salons[0])
@@ -53,6 +56,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
     init()
   }, [])
+
+  useEffect(() => {
+    if (loading) return
+    const isPublic = PUBLIC_PATHS.some(p => pathname.startsWith(p))
+    if (!user && !isPublic) router.push('/login')
+    if (user && pathname === '/login') router.push('/dashboard')
+  }, [loading, user, pathname])
 
   const logout = async () => {
     await fetch('/api/auth/logout', { method: 'POST', credentials: 'include' })
