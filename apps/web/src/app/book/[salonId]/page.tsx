@@ -153,7 +153,7 @@ export default function BookPage({ params }: { params: Promise<{ salonId: string
     }
   }
 
-  const categories = [...new Set(services.map(s => s.category).filter(Boolean))] as string[]
+  const categories = Array.from(new Set(services.map((s: Service) => s.category).filter(Boolean))) as string[]
   const filteredServices = selCategory
     ? services.filter(s => s.category === selCategory)
     : services
