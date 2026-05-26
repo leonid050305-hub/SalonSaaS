@@ -1,4 +1,4 @@
-import { prisma } from '@salon/db'
+import { prisma } from '../db'
 import { notifyBookingReminder } from './notifications'
 
 // Запускается каждый час через setInterval

@@ -1,5 +1,5 @@
 import { FastifyInstance } from 'fastify'
-import { prisma } from '@salon/db'
+import { prisma } from '../db'
 import { notifyBookingConfirmed, notifyBookingCancelled } from '../utils/notifications'
 
 export async function appointmentRoutes(app: FastifyInstance) {

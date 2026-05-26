@@ -1,5 +1,5 @@
 import { FastifyInstance } from 'fastify'
-import { prisma } from '@salon/db'
+import { prisma } from '../db'
 import { notifyBookingConfirmed } from '../utils/notifications'
 
 // Публичные роуты для виджета онлайн-записи — без JWT

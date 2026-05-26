@@ -1,6 +1,6 @@
 import { FastifyInstance } from 'fastify'
 import bcrypt from 'bcryptjs'
-import { prisma } from '@salon/db'
+import { prisma } from '../db'
 
 export async function authRoutes(app: FastifyInstance) {
 

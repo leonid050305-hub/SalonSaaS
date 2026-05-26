@@ -1,5 +1,5 @@
 import { FastifyInstance } from 'fastify'
-import { prisma } from '@salon/db'
+import { prisma } from '../db'
 
 export async function salonRoutes(app: FastifyInstance) {
   const auth = { preHandler: [app.authenticate] }
