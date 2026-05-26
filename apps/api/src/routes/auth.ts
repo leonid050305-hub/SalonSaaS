@@ -40,7 +40,7 @@ export async function authRoutes(app: FastifyInstance) {
       role: result.user.role,
     })
 
-    reply.setCookie('token', token, { httpOnly: true, path: '/', maxAge: 60 * 60 * 24 * 30 })
+    reply.setCookie('token', token, { httpOnly: true, path: '/', maxAge: 60 * 60 * 24 * 30, secure: true, sameSite: 'none' })
     return { user: { id: result.user.id, name, email, role: result.user.role } }
   })
 
@@ -64,7 +64,7 @@ export async function authRoutes(app: FastifyInstance) {
       role: user.role,
     })
 
-    reply.setCookie('token', token, { httpOnly: true, path: '/', maxAge: 60 * 60 * 24 * 30 })
+    reply.setCookie('token', token, { httpOnly: true, path: '/', maxAge: 60 * 60 * 24 * 30, secure: true, sameSite: 'none' })
     return { user: { id: user.id, name: user.name, email: user.email, role: user.role } }
   })
 
