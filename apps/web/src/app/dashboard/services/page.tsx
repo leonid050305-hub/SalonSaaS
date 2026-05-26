@@ -25,7 +25,7 @@ export default function ServicesPage() {
   const [fdur, setFdur]     = useState('60')
   const [fprice, setFprice] = useState('')
 
-  const categories = [...new Set(list.map((s:any) => s.category).filter(Boolean))]
+  const categories = Array.from(new Set(list.map((s:any) => s.category).filter(Boolean))) as string[]
   const visible    = list.filter((s:any) => activeCategory ? s.category === activeCategory : true)
 
   const openNew = () => {
